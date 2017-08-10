@@ -1,4 +1,4 @@
-program correct
+program hang
 
   implicit none
   integer :: s, n
@@ -13,4 +13,4 @@ program correct
 
   print*, s
 
-end program correct
+end program hang
