@@ -5,7 +5,7 @@ OPTS=-O3
 SOURCES=$(wildcard *.f90)
 BINS=$(patsubst %.f90,%.exec,$(SOURCES))
 
-all : $(BINS)
+all : $(BINS) data.txt
 
 clean :
 	rm -rf $(BINS) *.o *.mod
@@ -15,6 +15,9 @@ debug :
 	@ echo "SOURCES : "$(SOURCES)
 
 .PHONY : all clean debug
+
+data.txt :
+	@ for i in {1..100}; do echo $$RANDOM >> $@; done
 
 $(BINS) : %.exec : %.f90
 	$(FC) $(OPTS) -o $@ $^
