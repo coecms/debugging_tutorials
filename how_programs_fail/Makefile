@@ -1,5 +1,6 @@
 FC=gfortran
-OPTS=-g -O0
+#OPTS=-g -O0
+OPTS=-O3
 
 SOURCES=$(wildcard *.f90)
 BINS=$(patsubst %.f90,%.exec,$(SOURCES))
