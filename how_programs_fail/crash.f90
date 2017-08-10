@@ -1,7 +1,8 @@
 program crash
 
   implicit none
-  integer :: s, n, u, ios
+  integer :: s, n
+  integer :: ios, u
 
   s = 0
 

@@ -18,6 +18,7 @@ debug :
 
 data.txt :
 	@ for i in {1..100}; do echo $$RANDOM >> $@; done
+	@ echo "Created random $@"
 
 $(BINS) : %.exe : %.f90
 	$(FC) $(OPTS) -o $@ $^
