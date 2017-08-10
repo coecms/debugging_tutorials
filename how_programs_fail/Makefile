@@ -8,7 +8,7 @@ BINS=$(patsubst %.f90,%.exec,$(SOURCES))
 all : $(BINS) data.txt
 
 clean :
-	rm -rf $(BINS) *.o *.mod
+	rm -rf $(BINS) *.o *.mod data.txt
 
 debug :
 	@ echo "BINS:     "$(BINS)
