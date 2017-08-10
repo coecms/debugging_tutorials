@@ -3,7 +3,7 @@ FC=gfortran
 OPTS=-O3
 
 SOURCES=$(wildcard *.f90)
-BINS=$(patsubst %.f90,%.exec,$(SOURCES))
+BINS=$(patsubst %.f90,%.exe,$(SOURCES))
 
 all : $(BINS) data.txt
 
@@ -19,5 +19,5 @@ debug :
 data.txt :
 	@ for i in {1..100}; do echo $$RANDOM >> $@; done
 
-$(BINS) : %.exec : %.f90
+$(BINS) : %.exe : %.f90
 	$(FC) $(OPTS) -o $@ $^
