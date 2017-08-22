@@ -3,6 +3,7 @@ program hangs
     implicit none
     integer :: n(10), i
 
+    ! Please ingore the following two lines
     integer :: b(11)
     equivalence (n(1), b(1)), (i, b(11))
 
