@@ -4,7 +4,7 @@ SOURCES=$(wildcard *.f90)
 OBJECTS=$(patsubst %.f90,%.o,$(SOURCES))
 MODS=$(patsubst %.f90,%.mod,$(SOURCES))
 
-#DEBUG=-g -O0 -fcheck=all -fbacktrace
+DEBUG=-g -O0 -fcheck=all -fbacktrace
 CFLAGS=-c $(DEBUG)
 LFLAGS=$(DEBUG)
 

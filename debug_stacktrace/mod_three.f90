@@ -3,6 +3,7 @@ module mod_three
 contains
     subroutine three()
         implicit none
-        open(unit=100, file='/nada', status='old', action='read')
+        call backtrace
+        stop 1
     end subroutine three
 end module mod_three
