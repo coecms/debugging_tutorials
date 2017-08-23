@@ -1,2 +1,2 @@
 hangs : hangs.f90
-	gfortran -o $@ $^
+	ifort -O0 -o $@ $^

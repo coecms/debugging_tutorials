@@ -1,4 +1,4 @@
-FC=gfortran
+FC=ifort
 #OPTS=-g -O0
 OPTS=-O3
 
