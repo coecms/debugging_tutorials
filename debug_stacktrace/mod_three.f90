@@ -3,7 +3,6 @@ module mod_three
 contains
     subroutine three()
         implicit none
-        call backtrace
-        stop 1
+        call abort
     end subroutine three
 end module mod_three
