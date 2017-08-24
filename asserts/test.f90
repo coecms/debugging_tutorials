@@ -1,7 +1,7 @@
 #ifdef DEBUG
-#define assert call assertion
+#define assert(expr, note) call assertion(expr, note)
 #else
-#define assert !
+#define assert(expr, note) 
 #endif
 
 program test
@@ -12,8 +12,8 @@ program test
 
     implicit none
     integer :: i
-    integer :: n(10), a(5)
-    equivalence (n(11), a(1))
+    integer :: n(10), a(5), b(2)
+    equivalence (n(10), b(1)), (a(1), b(2))
 
     a(:) = 0
 

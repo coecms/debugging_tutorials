@@ -1,10 +1,10 @@
-FC=gfortran
+FC=ifort
 
-DEBUG=-O0 -g
+DEBUG=-O0 -g -traceback # -DDEBUG
 
 SOURCES=$(wildcard *.f90)
 OBJECTS=$(patsubst %.f90,%.o,$(SOURCES))
-CFLAGS=$(DEBUG) -c -cpp
+CFLAGS=$(DEBUG) -c -fpp
 LFLAGS=$(DEBUG)
 
 default : test
