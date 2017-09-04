@@ -23,6 +23,9 @@ program test
         print*, i, n(i)
     end do
 
+    n(5) = 3
+    assert(all((n(2:) - n(:size(n)-1) > 0)), 'n not increasing')
+
     print '(*(2X, I0))', n
     print '(*(2X, I0))', a
 

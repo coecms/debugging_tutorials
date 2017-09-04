@@ -1,6 +1,6 @@
 FC=ifort
 
-DEBUG=-O0 -g -traceback # -DDEBUG
+DEBUG=-O0 -g -traceback -DDEBUG
 
 SOURCES=$(wildcard *.f90)
 OBJECTS=$(patsubst %.f90,%.o,$(SOURCES))
