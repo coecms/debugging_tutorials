@@ -1,5 +1,5 @@
-FC=gfortran
-DEBUG=-g -O0 -fbacktrace
+FC=ifort
+DEBUG=#-g -O0 -traceback
 
 stackframe : stackframe.F90
 	$(FC) $(DEBUG) -o $@ $^
