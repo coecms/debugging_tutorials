@@ -1,12 +1,14 @@
 program stackframe
 
     implicit none
-    integer :: n
+    integer :: n, f
 
     print*, "Enter a number"
     read*, n
 
-    print '(I0, "! is ", I0)', n, fact(n)
+    f = fact(n)
+
+    print '(I0, "! is ", I0)', n, f
 
 contains
 
