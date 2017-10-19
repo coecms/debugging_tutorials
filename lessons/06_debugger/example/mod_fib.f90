@@ -7,7 +7,8 @@ contains
         implicit none
         integer, intent(in) :: n
         integer(kind=int64) :: f
-!        integer :: a, b, i
+!        integer(kind=int64) :: a, b
+!        integer :: i
         if ( n <= 2 ) then
             f = 1
         else
