@@ -38,15 +38,20 @@ contains
         character(len=100) :: ErrorMessage
         integer(kind=int32) :: messageLen, ierror
         if (error == 0) return
-        call MPI_Error_String(error, ErrorMessage, messageLen, ierror)
+
         print *, "Encountered Error"
+        
         if (present(routine)) then
             print *, "during " // routine
         end if
+        
         print '(A, I0)', "ErrorCode: ", error
+        
+        call MPI_Error_String(error, ErrorMessage, messageLen, ierror)
         if (ierror == 0) then
             print *, trim(ErrorMessage)
         end if
+        
         stop 1
     end subroutine check
 
