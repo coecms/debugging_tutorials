@@ -1,12 +1,12 @@
 module mod_fib
-
+    use iso_fortran_env
     implicit none
 contains
 
     recursive function fib(n) result(f)
         implicit none
         integer, intent(in) :: n
-        integer :: f
+        integer(kind=int64) :: f
 !        integer :: a, b, i
         if ( n <= 2 ) then
             f = 1

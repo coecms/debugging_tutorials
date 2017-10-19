@@ -1,10 +1,10 @@
 program main
-
+    use iso_fortran_env
     use mod_fac
     use mod_fib
     implicit none
     integer :: n
-    integer :: fib_n, fac_n
+    integer(kind=int64) :: fib_n, fac_n
 
     print *, "Please enter a number: "
     read *, n

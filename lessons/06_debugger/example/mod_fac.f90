@@ -1,11 +1,11 @@
 module mod_fac
-
+    use iso_fortran_env
     implicit none
 contains
     recursive function fac(n) result (f)
         implicit none
         integer, intent(in) :: n
-        integer :: f
+        integer(kind=int64) :: f
         if (n == 1) then
             f = 1
             return
