@@ -1,6 +1,6 @@
-FC=gfortran
+FC=ifort
 LD=$(FC)
-DEBUG=-g -O0 # -traceback -check all -warn all
+DEBUG=-g -O0
 FFLAGS=-c $(DEBUG)
 LFLAGS=$(DEBUG)
 
