@@ -16,15 +16,15 @@ program multi
     call check(mpierr, 'Comm_Size')
     
     if (mpirank == 0) then
-        print *, "I am the master"
-        print *, "I chose a random number"
+        print *, "Rank  0: I am the master"
+        print *, "Rank  0: I chose the holy number"
         holy_number = irand()
-        print '(A, I0)', "I chose: ", holy_number
+        print '(X, A, I0, A)', "Rank  0: I chose ", holy_number, " as the holy number"
     end if
     call MPI_Bcast(buffer = holy_number, count = 1, &
                    datatype = MPI_INT32_T, root = 0, &
                    comm = mpicomm, ierror = mpierr)
-    print '(A, I2, A, I0)', "Rank ", mpirank, ": All hail ", holy_number
+    print '(X, A, I2, A, I0)', "Rank ", mpirank, ": All hail ", holy_number
 
     call MPI_Finalize(mpierr)
     call check(mpierr, "finalize")
