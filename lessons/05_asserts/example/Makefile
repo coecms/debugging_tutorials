@@ -1,26 +1,22 @@
 FC=ifort
 
-DEBUG=-O0 -g -traceback -DDEBUG
-
-SOURCES=$(wildcard *.F90)
-OBJECTS=$(patsubst %.F90,%.o,$(SOURCES))
+SOURCES=$(wildcard *.f90)
+OBJECTS=$(patsubst %.f90,%.o,$(SOURCES))
 CFLAGS=$(DEBUG) -c
 LFLAGS=$(DEBUG)
 
 default : test
 
 .SUFFIXES:
-.SUFFIXES: .F90 .o
+.SUFFIXES: .f90 .o
 
-$(OBJECTS) : %.o : %.F90
+$(OBJECTS) : %.o : %.f90
 	$(FC) $(CFLAGS) -o $@ $<
 
 test : $(OBJECTS)
 	$(FC) $(LFLAGS) -o $@ $^
 
-test.o : mod_assertion.o
-
-$(OBJECTS) : Makefile
+test_interpolate.o : mod_interpolation.o
 
 clean :
 	@rm -rf $(OBJECTS) test *.mod
