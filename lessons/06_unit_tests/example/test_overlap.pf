@@ -8,7 +8,7 @@ subroutine test_overlap_same()
     a = [1, 3]
     b = [1, 3]
     result = overlap(a, b)
-    @assertEqual(result, 2)
+    @assertEqual(2, result)
 end subroutine test_overlap_same
 
 @test
@@ -21,7 +21,7 @@ subroutine test_overlap_b_inside_a()
     a = [1, 4]
     b = [2, 3]
     result = overlap(a, b)
-    @assertEqual(result, 1)
+    @assertEqual(1, result)
 end subroutine test_overlap_b_inside_a
 
 @test
@@ -34,7 +34,7 @@ subroutine test_overlap_intersecting()
     a = [1, 3]
     b = [2, 4]
     result = overlap(a, b)
-    @assertEqual(result, 1)
+    @assertEqual(1, result)
 end subroutine test_overlap_intersecting
 
 @test
@@ -47,5 +47,5 @@ subroutine test_overlap_distinct()
     a = [1, 2]
     b = [3, 4]
     result = overlap(a, b)
-    @assertEqual(result, 0)
+    @assertEqual(0, result)
 end subroutine test_overlap_distinct
