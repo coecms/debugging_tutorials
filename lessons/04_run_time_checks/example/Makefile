@@ -1,5 +1,5 @@
 hangs : hangs.f90
-	ifort -O0 -g -o $@ $^
+	ifort $(DEBUG) -O0 -o $@ $^
 
 clean :
 	@rm hangs
