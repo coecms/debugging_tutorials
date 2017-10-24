@@ -1,6 +1,6 @@
 include ${PFUNIT}/include/base.mk
 
-F90=gfortran
+F90=ifort
 FFLAGS=-g -O0
 
 tests.x : testSuites.inc test_overlap.pf mod_overlap.o
