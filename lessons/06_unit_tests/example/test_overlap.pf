@@ -1,0 +1,51 @@
+@test
+subroutine test_overlap_same()
+    use mod_overlap, only: overlap
+    use pfunit_mod
+    implicit none
+    integer, dimension(2) :: a, b
+    integer :: result
+    a = [1, 3]
+    b = [1, 3]
+    result = overlap(a, b)
+    @assertEqual(result, 2)
+end subroutine test_overlap_same
+
+@test
+subroutine test_overlap_b_inside_a()
+    use mod_overlap, only: overlap
+    use pfunit_mod
+    implicit none
+    integer, dimension(2) :: a, b
+    integer :: result
+    a = [1, 4]
+    b = [2, 3]
+    result = overlap(a, b)
+    @assertEqual(result, 1)
+end subroutine test_overlap_b_inside_a
+
+@test
+subroutine test_overlap_intersecting()
+    use mod_overlap, only: overlap
+    use pfunit_mod
+    implicit none
+    integer, dimension(2) :: a, b
+    integer :: result
+    a = [1, 3]
+    b = [2, 4]
+    result = overlap(a, b)
+    @assertEqual(result, 1)
+end subroutine test_overlap_intersecting
+
+@test
+subroutine test_overlap_distinct()
+    use mod_overlap, only: overlap
+    use pfunit_mod
+    implicit none
+    integer, dimension(2) :: a, b
+    integer :: result
+    a = [1, 2]
+    b = [3, 4]
+    result = overlap(a, b)
+    @assertEqual(result, 0)
+end subroutine test_overlap_distinct
