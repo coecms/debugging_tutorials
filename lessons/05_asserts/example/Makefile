@@ -2,17 +2,17 @@ FC=ifort
 
 DEBUG=-O0 -g -traceback -DDEBUG
 
-SOURCES=$(wildcard *.f90)
-OBJECTS=$(patsubst %.f90,%.o,$(SOURCES))
-CFLAGS=$(DEBUG) -c -fpp
+SOURCES=$(wildcard *.F90)
+OBJECTS=$(patsubst %.F90,%.o,$(SOURCES))
+CFLAGS=$(DEBUG) -c
 LFLAGS=$(DEBUG)
 
 default : test
 
 .SUFFIXES:
-.SUFFIXES: .f90 .o
+.SUFFIXES: .F90 .o
 
-$(OBJECTS) : %.o : %.f90
+$(OBJECTS) : %.o : %.F90
 	$(FC) $(CFLAGS) -o $@ $<
 
 test : $(OBJECTS)

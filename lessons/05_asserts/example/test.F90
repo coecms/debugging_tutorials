@@ -17,16 +17,15 @@ program test
 
     a(:) = 0
 
-    do i = 1, 11
+    do i = 1, 10
         assert(i <= size(n), 'index out of range')
         n(i) = i**2
-        print*, i, n(i)
     end do
 
     n(5) = 3
     assert(all((n(2:) - n(:size(n)-1) > 0)), 'n not increasing')
 
-    print '(*(2X, I0))', n
-    print '(*(2X, I0))', a
+    print '(A, *(2X, I0))', "10 increasing numbers: ", n
+    print '(A, *(2X, I0))', "5 zeros: ", a
 
 end program test
