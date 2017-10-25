@@ -1,15 +1,16 @@
+
 @test
-subroutine test_overlap_same()
+subroutine test_overlap_partial()
     use mod_overlap, only: overlap
     use pfunit_mod
     implicit none
     integer, dimension(2) :: a, b
     integer :: result
     a = [1, 3]
-    b = [1, 3]
+    b = [2, 4]
     result = overlap(a, b)
-    @assertEqual(2, result)
-end subroutine test_overlap_same
+    @assertEqual(1, result)
+end subroutine test_overlap_partial
 
 @test
 subroutine test_overlap_b_inside_a()
@@ -25,20 +26,46 @@ subroutine test_overlap_b_inside_a()
 end subroutine test_overlap_b_inside_a
 
 @test
-subroutine test_overlap_intersecting()
+subroutine test_overlap_identical()
     use mod_overlap, only: overlap
     use pfunit_mod
     implicit none
     integer, dimension(2) :: a, b
     integer :: result
     a = [1, 3]
-    b = [2, 4]
+    b = [1, 3]
     result = overlap(a, b)
-    @assertEqual(1, result)
-end subroutine test_overlap_intersecting
+    @assertEqual(2, result)
+end subroutine test_overlap_identical
 
 @test
-subroutine test_overlap_distinct()
+subroutine test_overlap_point()
+    use mod_overlap, only: overlap
+    use pfunit_mod
+    implicit none
+    integer, dimension(2) :: a, b
+    integer :: result
+    a = [1, 4]
+    b = [1, 3]
+    result = overlap(a, b)
+    @assertEqual(2, result)
+end subroutine test_overlap_point
+
+@test
+subroutine test_overlap_touching()
+    use mod_overlap, only: overlap
+    use pfunit_mod
+    implicit none
+    integer, dimension(2) :: a, b
+    integer :: result
+    a = [1, 3]
+    b = [3, 4]
+    result = overlap(a, b)
+    @assertEqual(1, result)
+end subroutine test_overlap_touching
+
+@test
+subroutine test_overlap_disjoint()
     use mod_overlap, only: overlap
     use pfunit_mod
     implicit none
@@ -48,4 +75,4 @@ subroutine test_overlap_distinct()
     b = [3, 4]
     result = overlap(a, b)
     @assertEqual(0, result)
-end subroutine test_overlap_distinct
+end subroutine test_overlap_disjoint
