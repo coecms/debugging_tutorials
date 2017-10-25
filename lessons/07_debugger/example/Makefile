@@ -23,4 +23,4 @@ clean :
 
 .PHONY: default clean
 
-main.o : $(OBJECTS)
+main.o : $(filter-out main.o,$(OBJECTS))

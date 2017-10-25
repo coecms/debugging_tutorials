@@ -1,17 +1,13 @@
 program main
-    use iso_fortran_env
-    use mod_fac
-    use mod_fib
+    use mod_one
     implicit none
-    integer :: n
-    integer(kind=int64) :: fib_n, fac_n
-
-    print *, "Please enter a number: "
-    read *, n
-
-    fac_n = fac(n)
-    print*, "faculty of n is ", fac_n
-    fib_n = fib(n)
-    print*, "fib of n is ", fib_n
-
+    integer :: i
+    i = 1
+    call one_f(i)
+    print *, i
+    call one_g(i)
+    print *, i
+    call one_h(i)
+    print *, i
 end program main
+
