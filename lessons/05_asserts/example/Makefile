@@ -1,16 +1,16 @@
 FC=ifort
 
-SOURCES=$(wildcard *.f90)
-OBJECTS=$(patsubst %.f90,%.o,$(SOURCES))
+SOURCES=$(wildcard *.F90)
+OBJECTS=$(patsubst %.F90,%.o,$(SOURCES))
 CFLAGS=$(DEBUG) -c
 LFLAGS=$(DEBUG)
 
 default : test
 
 .SUFFIXES:
-.SUFFIXES: .f90 .o
+.SUFFIXES: .F90 .o
 
-$(OBJECTS) : %.o : %.f90
+$(OBJECTS) : %.o : %.F90
 	$(FC) $(CFLAGS) -o $@ $<
 
 test : $(OBJECTS)
