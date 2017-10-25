@@ -1,5 +1,3 @@
-#ifndef ASSERTION
-
 #ifdef DEBUG
 
 subroutine assertion(expr, note)
@@ -16,7 +14,4 @@ end subroutine assertion
 #define assert(expr, note) call assertion(expr, note)
 #else
 #define assert(expr, note)
-#endif
-
-#define ASSERTION
 #endif
