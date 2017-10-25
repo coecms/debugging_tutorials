@@ -7,7 +7,7 @@ all : run
 run : multi exec
 
 exec : multi
-	mpirun -n 4 $^
+#	mpirun -n 4 $^
 
 multi : multi.f90
 	$(FC) -o $@ $(FFLAGS) $<
