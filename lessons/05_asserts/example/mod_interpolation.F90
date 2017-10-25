@@ -1,5 +1,3 @@
-#include "assertion.h"
-
 module mod_interpolation
     implicit none
 contains
@@ -7,8 +5,6 @@ contains
         real, intent(in) :: x_array(:), y_array(:), x
         real :: y
         integer :: i
-        assert(size(x_array) == size(y_array), 'arrays must have same size')
-        assert(all(x_array(2:) - x_array(:size(x_array)-1) > 0), 'x_array must be increasing')
         if (x < x_array(1)) then
             y = y_array(1)
             return
