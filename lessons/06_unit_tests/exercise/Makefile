@@ -1,4 +1,4 @@
-F90=gfortran
+F90=ifort
 
 TESTFILES=$(wildcard *.pf)
 TESTCODES=$(patsubst %.pf,%.F90,$(TESTFILES))
