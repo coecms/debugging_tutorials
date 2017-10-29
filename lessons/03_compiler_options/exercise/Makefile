@@ -1,6 +1,6 @@
 FC=ifort
 
-FLAGS=-g -O0 -traceback
+FLAGS=
 
 SRCS=$(wildcard *.f90)
 OBJS=$(patsubst %.f90,%.o,$(SRCS))
