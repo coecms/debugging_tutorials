@@ -1,6 +1,6 @@
-FC=gfortran
+FC=ifort
 
-FLAGS=-g -O0 -fbacktrace
+FLAGS=-g -O0 -traceback
 
 SRCS=$(wildcard *.f90)
 OBJS=$(patsubst %.f90,%.o,$(SRCS))
