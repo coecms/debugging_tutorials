@@ -1,48 +1,23 @@
 @test
-subroutine test_1
-    use pfunit_mod
-    use mod_power, only : is_power_of_two
-    @assertTrue(is_power_of_two(1))
-end subroutine test_1
-
-@test
 subroutine test_2
     use pfunit_mod
     use mod_power, only : is_power_of_two
-    @assertTrue(is_power_of_two(2))
+    implicit none
+    integer :: n
+    logical :: res
+    n = 2
+    res = is_power_of_two(n)
+    @assertTrue(res)
 end subroutine test_2
-
-@test
-subroutine test_4
-    use pfunit_mod
-    use mod_power, only : is_power_of_two
-    @assertTrue(is_power_of_two(4))
-end subroutine test_4
-
-@test
-subroutine test_16
-    use pfunit_mod
-    use mod_power, only : is_power_of_two
-    @assertTrue(is_power_of_two(16))
-end subroutine test_16
-
-@test
-subroutine test_6
-    use pfunit_mod
-    use mod_power, only : is_power_of_two
-    @assertFalse(is_power_of_two(6))
-end subroutine test_6
 
 @test
 subroutine test_neg2
     use pfunit_mod
     use mod_power, only : is_power_of_two
-    @assertFalse(is_power_of_two(-2))
+    implicit none
+    integer :: n
+    logical :: res
+    n = -2
+    res = is_power_of_two(n)
+    @assertFalse(res)
 end subroutine test_neg2
-
-@test
-subroutine test_neghuge
-    use pfunit_mod
-    use mod_power, only : is_power_of_two
-    @assertFalse(is_power_of_two(-huge(1)-1))
-end subroutine test_neghuge
