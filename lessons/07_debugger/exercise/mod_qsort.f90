@@ -1,6 +1,6 @@
 module mod_qsort
     implicit none
-
+    private :: swap
 contains
 
     recursive subroutine my_qsort(a)
@@ -13,10 +13,10 @@ contains
         upper_idx = size(a)
         pivot = a(1)
         do
-            do while (lower_idx < size(a) .and. a(lower_idx) <= pivot)
+            do while (a(lower_idx) <= pivot)
                 lower_idx = lower_idx + 1
             end do
-            do while (upper_idx > 1 .and. a(upper_idx) > pivot)
+            do while (a(upper_idx) > pivot)
                 upper_idx = upper_idx - 1
             end do
             if (lower_idx < upper_idx) then
