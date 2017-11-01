@@ -15,9 +15,11 @@ contains
         do
             do while (a(lower_idx) <= pivot)
                 lower_idx = lower_idx + 1
+                if (lower_idx > size(a)) exit
             end do
             do while (a(upper_idx) > pivot)
                 upper_idx = upper_idx - 1
+                if (upper_idx < 2) exit
             end do
             if (lower_idx < upper_idx) then
                 call swap(a, lower_idx, upper_idx)
