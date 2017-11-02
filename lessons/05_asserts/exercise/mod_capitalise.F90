@@ -1,3 +1,5 @@
+#include "assertion.h"
+
 module mod_capitalise
 
     implicit none
@@ -6,6 +8,8 @@ contains
         implicit none
         character(len=*), intent(inout) :: text
         integer, intent(in) :: element
+        assert(element >= 1, "element is negative")
+        assert(element <= len(text), "element is too large")
         select case (ichar(text(element:element)))
         case (ichar('a'):ichar('z'))
             text(element:element) = achar(ichar(text(element:element)) + &

@@ -24,3 +24,5 @@ clean :
 .PHONY: default clean
 
 master.o : mod_capitalise.o
+
+$(filter-out assertion.o,$(OBJECTS)) : assertion.o
