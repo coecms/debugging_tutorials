@@ -1,12 +1,14 @@
 program cap
-    use mod_interweave, only : interweave
+    use mod_modulo, only: my_mod
     implicit none
-    character(len=20) :: testString
 
-    call interweave('Hello', 'World', testString)
-    print *, testString
+    integer, dimension(:), allocatable :: array, div_array
 
-    call interweave('This is a very long text','this is another long text',testString)
-    print *, testString
+    allocate(array(5), div_array(5))
+    array = [40, 2, -47, 26, 51]
+    print '(*(I4))', array
+    call my_mod(array,13,div_array)
+    print '(*(I4))', array
+    print '(*(I4))', div_array
 
 end program cap
