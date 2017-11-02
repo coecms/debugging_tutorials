@@ -1,13 +1,11 @@
 program cap
-    use mod_capitalise, only : capitalise
+    use mod_interweave, only : interweave
     implicit none
     character(len=20) :: testString
-    testString = "I am a teapot"
 
+    call interweave('Hello', 'World', testString)
     print *, testString
-    call capitalise(testString, 3)
-    print *, testString
-    call capitalise(testString, -21)
-    print *, testString
+
+    call interweave('This is a very long text','this is another long text',testString)
 
 end program cap
