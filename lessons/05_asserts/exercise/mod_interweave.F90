@@ -12,9 +12,6 @@ contains
 
         integer :: i, n, m
 
-        assert(len_trim(texta) * 2 < len(textout), 'insufficient space in textout')
-        assert(len_trim(textb) * 2 < len(textout), 'insufficient space in textout')
-
         textout = ""
 
         a_smaller_b = len_trim(texta) < len_trim(textb)

@@ -7,5 +7,6 @@ program cap
     print *, testString
 
     call interweave('This is a very long text','this is another long text',testString)
+    print *, testString
 
 end program cap
